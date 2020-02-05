@@ -2,7 +2,7 @@ var persona = require('../models/persona.js'),
     express = require('express'),
     router = express.Router();
 
-router.get('/obtener', (req, res) => {
+router.post('/obtener', (req, res) => {
     persona.find({}, (err, docs) => {
         if (err) {
             console.error(err)
