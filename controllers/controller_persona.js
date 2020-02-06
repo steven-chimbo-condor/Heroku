@@ -1,6 +1,14 @@
 var persona = require('../models/persona.js'),
     express = require('express'),
     router = express.Router();
+    
+var getData= function(){
+      var cedula = document.getElementById("cedula").nodeValue;
+      var nombre = document.getElementById("nombre").nodeValue;
+      var edad = document.getElementById("edad").nodeValue;
+      var sexo = document.getElementById("sexo").nodeValue;
+      console.log(cedula+""+nombre+edad+sexo);
+    }
 
 router.get('/obtener', (req, res) => {
     persona.find({}, (err, docs) => {
@@ -87,4 +95,5 @@ router.get('/obtener', (req, res) => {
   }
 
 })
+
 module.exports = router;
